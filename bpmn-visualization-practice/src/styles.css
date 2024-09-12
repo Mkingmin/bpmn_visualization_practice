@@ -20,3 +20,22 @@ footer {
   overflow: hidden;
   background-color: white;
 }
+.bpmn-type-event > ellipse,
+.bpmn-type-activity > rect,
+.bpmn-type-gateway > path:nth-child(1) {
+ fill: rgb(230, 225, 225);
+}
+
+.task-running-on-time > rect {
+  stroke-dasharray: 10, 5;
+  animation-name: dash-task;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 0 0.95em rgb(6, 146, 3));
+}
+@keyframes dash-task {
+  to {
+    stroke-dashoffset: -15;
+  }
+}
